@@ -33,3 +33,11 @@ for cadastro in pessoas:
     if cadastro[3] > maior:
 
         maior = cadastro[3]
+
+    if cadastro[3] < menor:
+
+        menor = cadastro[3]
+
+print('Maior IMC:',maior)
+
+print('Menor IMC:',menor)
