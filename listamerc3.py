@@ -15,3 +15,14 @@ for i in range(3):
   item.clear()
 
 print(mercado)
+
+
+soma = 0
+print('Lista de compras:')
+print('-' * 20)
+print('item |quantidade |valor unitário |total ')
+for item in mercado:
+    print('{} | {} | {} | {} ' .format(item[0], item[1], item[2], item[1] * item[2]))
+    soma += item[1] * item[2]
+print('-' * 20)
+print(f'Soma total: {soma}')
