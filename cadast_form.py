@@ -1,5 +1,10 @@
 # Sistema de Cadastro com Dicionário
-cadastro = {'nome': [],'sexo': [], 'ano': []}
+
+cadastro = {
+    'nomes': [],
+    'sexos': [],
+    'anos': []
+}
 
 
 def valida_idade(pergunta):
@@ -12,6 +17,7 @@ def valida_idade(pergunta):
         except ValueError:
             print("Digite um número válido!")
 
+
 def valida_sexo(pergunta):
     while True:
         sexo = input(pergunta).upper()[0]
@@ -21,30 +27,27 @@ def valida_sexo(pergunta):
 
 
 while True:
-    terminar = input('Deseja cadastrar uma pessoa? [S/N] ')
-    if terminar.upper() in  'N':
-        break
-    if terminar.upper() not in 'S':
-        print('Digite S para Sim ou N para Não')
-        continue
+    print("\n" + "=" * 40)
+    print("NOVO CADASTRO".center(40))
+    print("=" * 40)
 
     # Coleta de dados
-    nome = input('Digite seu nome: ')
-    sexo = input('Digite seu sexo: ')
-    ano = input('Digite seu ano: ')
+    nome = input("Nome completo: ").title()
+    sexo = valida_sexo("Sexo [M/F]: ")
+    idade = valida_idade("Idade: ")
 
     # Armazenamento
-    cadastro = ['nome'].append(nome)
-    cadastro = ['sexo'].append(sexo)
-    cadastro = ['ano'].append(ano)
+    cadastro['nomes'].append(nome)
+    cadastro['sexos'].append(sexo)
+    cadastro['anos'].append(idade)
 
     # Pergunta se deseja continuar
     continuar = input("\nDeseja cadastrar outra pessoa? [S/N] ").upper()[0]
     if continuar == 'N':
         break
 
-    # Relatório final
-print('\n' + "=" * 40)
+# Relatório final
+print("\n" + "=" * 40)
 print("RELATÓRIO DE CADASTROS".center(40))
 print("=" * 40)
 
